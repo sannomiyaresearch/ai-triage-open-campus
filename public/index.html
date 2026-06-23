@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AIトリアージ【オープンキャンパス用】</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="kicker">Open Campus Demo</p>
+          <h1>AIトリアージ【オープンキャンパス用】</h1>
+        </div>
+        <div class="status-pill" id="statusPill">待機中</div>
+      </header>
+
+      <section class="workspace">
+        <div class="panel capture-panel">
+          <div class="panel-header">
+            <h2>来院前の電話</h2>
+            <span id="timer">00:00</span>
+          </div>
+
+          <div class="meter" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="button-row">
+            <button class="primary" id="recordButton" type="button">録音</button>
+            <button id="stopButton" type="button" disabled>停止</button>
+            <button id="clearButton" type="button">消去</button>
+          </div>
+
+          <p class="notice">
+            ※患者様の発言を繰り返すことで、質の高いメモを作ることができるようになります。
+          </p>
+
+          <label class="field-label" for="transcript">文字起こし</label>
+          <textarea id="transcript" spellcheck="false" placeholder="録音停止後に文字起こしが入ります。"></textarea>
+        </div>
+
+        <div class="panel memo-panel">
+          <div class="panel-header">
+            <h2>医師向けメモ</h2>
+            <button id="printButton" type="button" disabled>印刷</button>
+          </div>
+          <textarea id="summary" spellcheck="false" placeholder="停止後にS/O形式のメモが入ります。編集して印刷できます。"></textarea>
+        </div>
+      </section>
+    </main>
+
+    <article id="printArea" aria-hidden="true">
+      <h1>AIトリアージ【オープンキャンパス用】</h1>
+      <pre id="printContent"></pre>
+    </article>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
